@@ -5,9 +5,8 @@ from src.path import root_join
 host_name = 'localhost'
 server_port = 8080
 
-
 class MyServer(BaseHTTPRequestHandler):
-    """ A class that is responsible for processing incoming requests from clients """
+    """ Класс для обработки запросов клиентов """
     def do_GET(self):
         """ Method for handling incoming GET requests """
         self.send_response(200)
@@ -18,7 +17,7 @@ class MyServer(BaseHTTPRequestHandler):
         self.wfile.write(bytes(content, 'utf-8'))
 
     def do_POST(self):
-        """ Method for handling POST requests """
+        """ Метод обработки post запросов """
         content_length = int(self.headers['Content-Length'])
         body = self.rfile.read(content_length)
         print(body)
