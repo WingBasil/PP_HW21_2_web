@@ -7,7 +7,7 @@ server_port = 8080
 
 
 class MyServer(BaseHTTPRequestHandler):
-    """ A class that is responsible for processing incoming requests from clients """
+    """ Класс для обработки запросов клиентов """
     def do_GET(self):
         """ Method for handling incoming GET requests """
         self.send_response(200)
